@@ -4,7 +4,7 @@
 	<style>
     .flex-container {
       display: flex;  flex-direction:row;
-      background-color: red;
+      background-color: rgb(187, 255, 0);
   }
 
 .flex-container > div {  /*div children of the flex container*/
@@ -35,7 +35,7 @@
 	<button onclick="makeNewDiv()">Push value</button>
     <button onclick="popItem()">Pop</button>
     <button onclick="zap()">Zap values</button>
-	
+	<button onclick="unique()">Unique</button>
 </body>
 
 <script>
@@ -68,6 +68,20 @@
                 }
             }
         }
+    }
+
+	// Bonus
+
+	function unique(){
+        var stackItems = document.getElementsByClassName("stack")
+		for(var i=0; i<stackItems.length; i++){
+			for(var j=i+1; j<stackItems.length; j++){
+                if(stackItems[i].innerHTML == stackItems[j].innerHTML){
+                    stackItems[j].remove()
+                    j--;i--
+                }
+            }
+		}
     }
 </script>
 </html>	
